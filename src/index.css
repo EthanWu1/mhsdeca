@@ -7,3 +7,11 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* Reveal helpers */
 .reveal-seq > * { margin-top: 0.5rem; }
+
+
+/* Force 3 columns for features on larger screens; stack on small screens */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+}

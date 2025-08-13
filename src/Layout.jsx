@@ -57,7 +57,11 @@ export default function Layout({ children }) {
             <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3e398a9e8_download.png" alt="DECA Logo" style={{ height: 24, width: "auto" }} />
             <span style={{ fontWeight: 800 }}>Memorial High School DECA</span>
           </div>
-          <a href="mailto:decamemorialclub@gmail.com" style={{ color: "#64748b", fontSize: 14 }}>decamemorialclub@gmail.com</a>
+          <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
+            <a href="mailto:decamemorialclub@gmail.com" style={{ color: "#64748b", fontSize: 14 }}>decamemorialclub@gmail.com</a>
+            <a href="https://www.instagram.com/deca_memorialhs/" target="_blank" rel="noreferrer" style={{ color: "#334155", fontSize: 14 }}>Instagram</a>
+            <a href="https://www.remind.com/join/deca4ever" target="_blank" rel="noreferrer" style={{ color: "#334155", fontSize: 14 }}>Remind</a>
+          </div>
         </div>
       </footer>
     </div>

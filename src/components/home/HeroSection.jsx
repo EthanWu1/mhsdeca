@@ -6,7 +6,7 @@ export default function HeroSection() {
     <section style={{ minHeight: "80vh", display: "grid", placeItems: "center", padding: "0 24px" }}>
       <div style={{ maxWidth: 960, textAlign: "center" }}>
         <div style={{ display: "flex", justifyContent: "center", marginBottom: 16 }}>
-          <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3e398a9e8_download.png" alt="DECA Logo" style={{ width: 80 }} />
+          <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3e398a9e8_download.png" alt="DECA Logo" style={{ width: 120 }} />
         </div>
         <h1 style={{ fontSize: 56, fontWeight: 800, margin: 0, lineHeight: 1.1 }}>Memorial High School <span style={{ color: "#ef4444" }}>DECA</span></h1>
         <p style={{ fontSize: 20, color: "#334155", maxWidth: 720, margin: "16px auto 24px" }}>
