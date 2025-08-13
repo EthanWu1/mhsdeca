@@ -1,0 +1,6 @@
+/* Minimal reset + system font stack */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: #f8fafc; color: #0f172a; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }

@@ -1,0 +1,65 @@
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Home as HomeIcon, UserPlus, Users, Calendar } from "lucide-react";
+
+const nav = [
+  { title: "Home", url: "/", icon: HomeIcon },
+  { title: "Join DECA", url: "/join", icon: UserPlus },
+  { title: "Members", url: "/dashboard", icon: Users },
+  { title: "Events", url: "/events", icon: Calendar },
+];
+
+export default function Layout({ children }) {
+  const location = useLocation();
+
+  return (
+    <div className="min-h-screen relative overflow-x-hidden">
+      <nav style={{ position: "fixed", top: 24, left: "50%", transform: "translateX(-50%)", zIndex: 50 }}>
+        <div style={{ background: "rgba(255,255,255,0.9)", backdropFilter: "blur(12px)", border: "1px solid rgba(229,231,235,0.8)", borderRadius: 9999, padding: "12px 24px", boxShadow: "0 8px 24px rgba(0,0,0,0.08)"}}>
+          <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+            <Link to="/" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <div style={{ width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3e398a9e8_download.png" alt="DECA Logo" style={{ height: 24, width: "auto" }} />
+              </div>
+              <span style={{ fontWeight: 800, fontSize: 18, letterSpacing: "-0.02em" }}>DECA</span>
+            </Link>
+            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+              {nav.map((item) => {
+                const active = location.pathname === item.url;
+                const cls = active
+                  ? { background: "#ef4444", color: "white", boxShadow: "0 6px 16px rgba(239,68,68,0.25)" }
+                  : { color: "#475569" };
+                return (
+                  <Link key={item.title} to={item.url} style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 12px", borderRadius: 999, transition: "all .2s", ...cls }}>
+                    <item.icon size={16} />
+                    <span style={{ fontWeight: 600, fontSize: 14 }}>{item.title}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Decorative blobs */}
+      <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}>
+        <div style={{ position: "absolute", top: -160, right: -160, width: 320, height: 320, background: "rgba(239,68,68,0.1)", borderRadius: "9999px", filter: "blur(48px)" }}></div>
+        <div style={{ position: "absolute", bottom: -160, left: -160, width: 320, height: 320, background: "rgba(248,113,113,0.12)", borderRadius: "9999px", filter: "blur(48px)" }}></div>
+      </div>
+
+      <main style={{ position: "relative", zIndex: 10, paddingTop: 96 }}>
+        {children}
+      </main>
+
+      <footer style={{ position: "relative", zIndex: 10, marginTop: 80, borderTop: "1px solid #e5e7eb", background: "#fff" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto", padding: "24px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3e398a9e8_download.png" alt="DECA Logo" style={{ height: 24, width: "auto" }} />
+            <span style={{ fontWeight: 800 }}>Memorial High School DECA</span>
+          </div>
+          <a href="mailto:decamemorialclub@gmail.com" style={{ color: "#64748b", fontSize: 14 }}>decamemorialclub@gmail.com</a>
+        </div>
+      </footer>
+    </div>
+  );
+}
