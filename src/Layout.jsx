@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home as HomeIcon, UserPlus, Users, Calendar } from "lucide-react";
@@ -52,6 +51,7 @@ export default function Layout({ children }) {
               justifyContent: "space-between",
             }}
           >
+            {/* Brand */}
             <Link to="/" style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <div
                 style={{
@@ -65,7 +65,8 @@ export default function Layout({ children }) {
                 <img
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3e398a9e8_download.png"
                   alt="DECA Logo"
-                  className="brand-logo" style={{ height: 28, width: "auto" }}
+                  className="brand-logo"
+                  style={{ height: 28, width: "auto" }}
                 />
               </div>
               <span style={{ fontWeight: 800, fontSize: 18, letterSpacing: "-0.02em" }}>
@@ -106,13 +107,12 @@ export default function Layout({ children }) {
               })}
             </div>
 
-            {/* Mobile toggle */}
+            {/* Mobile toggle (CSS will show/hide via .nav-mobile-btn / .nav-links media queries) */}
             <button
               className="nav-mobile-btn"
               aria-label="Toggle menu"
               onClick={() => setMenuOpen((v) => !v)}
               style={{
-                
                 border: "1px solid #e5e7eb",
                 background: "#fff",
                 padding: "8px 10px",
@@ -156,7 +156,18 @@ export default function Layout({ children }) {
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="nav-mobile-btn" style={{ position: "fixed", top: 92, left: 0, right: 0, zIndex: 49 }}>
+        <div
+          className="mobile-menu-panel"
+          style={{
+            position: "fixed",
+            top: 92,
+            left: 0,
+            right: 0,
+            zIndex: 49,
+            maxHeight: "calc(100vh - 100px)",
+            overflowY: "auto",
+          }}
+        >
           <div
             style={{
               margin: "0 16px",
@@ -220,6 +231,7 @@ export default function Layout({ children }) {
             <img
               src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3e398a9e8_download.png"
               alt="DECA Logo"
+              className="brand-logo"
               style={{ height: 24, width: "auto" }}
             />
             <span style={{ fontWeight: 800 }}>Memorial DECA</span>
@@ -228,12 +240,24 @@ export default function Layout({ children }) {
             <a href="mailto:decamemorialclub@gmail.com" style={{ color: "#64748b", fontSize: 14 }}>
               decamemorialclub@gmail.com
             </a>
-            <a href="https://www.instagram.com/deca_memorialhs/" target="_blank" rel="noreferrer" aria-label="Instagram" style={{ display:"inline-flex", alignItems:"center", justifyContent:"center" }}>
-  <img src={instaImg} alt="Instagram" style={{ width: 22, height: 22, borderRadius: 6 }} />
-</a>
-            <a href="https://www.remind.com/join/deca4ever" target="_blank" rel="noreferrer" aria-label="Remind" style={{ display:"inline-flex", alignItems:"center", justifyContent:"center" }}>
-  <img src={remindImg} alt="Remind" style={{ width: 22, height: 22, borderRadius: 6 }} />
-</a>
+            <a
+              href="https://www.instagram.com/deca_memorialhs/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}
+            >
+              <img src={instaImg} alt="Instagram" style={{ width: 22, height: 22, borderRadius: 6 }} />
+            </a>
+            <a
+              href="https://www.remind.com/join/deca4ever"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Remind"
+              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}
+            >
+              <img src={remindImg} alt="Remind" style={{ width: 22, height: 22, borderRadius: 6 }} />
+            </a>
           </div>
         </div>
       </footer>
