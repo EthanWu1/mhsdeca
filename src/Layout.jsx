@@ -21,7 +21,7 @@ export default function Layout({ children }) {
               <div style={{ width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3e398a9e8_download.png" alt="DECA Logo" style={{ height: 24, width: "auto" }} />
               </div>
-              <span style={{ fontWeight: 800, fontSize: 18, letterSpacing: "-0.02em" }}>DECA</span>
+              <span style={{ fontWeight: 800, fontSize: 18, letterSpacing: "-0.02em" }}>Memorial DECA</span>
             </Link>
             <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
               {nav.map((item) => {
@@ -55,7 +55,7 @@ export default function Layout({ children }) {
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "24px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3e398a9e8_download.png" alt="DECA Logo" style={{ height: 24, width: "auto" }} />
-            <span style={{ fontWeight: 800 }}>Memorial High School DECA</span>
+            <span style={{ fontWeight: 800 }}>Memorial DECA</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
             <a href="mailto:decamemorialclub@gmail.com" style={{ color: "#64748b", fontSize: 14 }}>decamemorialclub@gmail.com</a>
