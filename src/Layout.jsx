@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home as HomeIcon, UserPlus, Users, Calendar } from "lucide-react";
 
@@ -10,6 +10,7 @@ const nav = [
 ];
 
 export default function Layout({ children }) {
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
   return (
@@ -23,7 +24,10 @@ export default function Layout({ children }) {
               </div>
               <span style={{ fontWeight: 800, fontSize: 18, letterSpacing: "-0.02em" }}>Memorial DECA</span>
             </Link>
-            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <button className="nav-mobile" aria-label="Toggle menu" onClick={() => setMenuOpen(v => !v)} style={{ border: "1px solid #e5e7eb", background:"#fff", padding:"8px 10px", borderRadius: 8, fontWeight:700 }}>
+              Menu
+            </button>
+            <div className="nav-links" style={{ alignItems: "center", gap: 16 }}>
               {nav.map((item) => {
                 const active = location.pathname === item.url;
                 const cls = active
@@ -40,6 +44,14 @@ export default function Layout({ children }) {
           </div>
         </div>
       </nav>
+
+      {/* Mobile dropdown */}
+      {menuOpen && (
+        <div className="nav-mobile" style={{ position:"fixed", top:72, left:0, right:0, zIndex:49 }}>
+          <div style={{ margin:"0 16px", background:"#fff", border:"1px solid #e5e7eb", borderRadius:12, boxShadow:"0 12px 24px rgba(0,0,0,0.08)", padding:12 }}>
+            {nav.map((item) => (
+              <div key={item.title} style={{ padding:"10px 8px" }}>
+                <Link to={item.url} onClick={() => setMenuOpen(false)} style={{ display:"flex", alignItems:"center", gap:8, color:
 
       {/* Decorative blobs */}
       <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}>
