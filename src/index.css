@@ -50,3 +50,49 @@ img { display: block; max-width: 100%; height: auto; }
   .nav-links { display: none; }
   .nav-mobile { display: block; }
 }
+
+
+/* Mobile nav rules */
+.nav-links { display: flex; gap: 16px; align-items: center; }
+.nav-mobile-btn { display: none; }
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-mobile-btn { display: inline-flex; }
+}
+/* Mobile dropdown panel */
+.mobile-menu-panel {
+  position: fixed;
+  top: 92px;
+  left: 0;
+  right: 0;
+  z-index: 49;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+
+/* --- Logo animation & sizing --- */
+@keyframes spinPause {
+  0%   { transform: rotate(0deg); }
+  40%  { transform: rotate(360deg); } /* spin */
+  70%  { transform: rotate(360deg); } /* pause */
+  100% { transform: rotate(360deg); } /* hold until next cycle */
+}
+.logo-spin {
+  animation: spinPause 3.2s linear infinite;
+  will-change: transform;
+}
+/* Prevent image distortion: set height and keep width auto */
+.hero-logo {
+  height: clamp(80px, 18vw, 140px);
+  width: auto;
+}
+.brand-logo {
+  height: 28px;
+  width: auto;
+}
+@media (max-width: 640px) {
+  .brand-logo {
+    height: 24px;
+  }
+}

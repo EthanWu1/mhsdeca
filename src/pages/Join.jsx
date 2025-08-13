@@ -1,5 +1,7 @@
 import React from "react";
 import Reveal from "../Reveal.jsx";
+import instaImg from "../assets/instagram.webp";
+import remindImg from "../assets/remind.png";
 
 export default function Join() {
   return (
