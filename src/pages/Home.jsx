@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "../components/home/HeroSection.jsx";
 import FeaturesSection from "../components/home/FeaturesSection.jsx";
 import UpcomingEvents from "../components/home/UpcomingEvents.jsx";
+import Reveal from "../Reveal.jsx";
 
 export default function Home() {
   const demoEvents = [
@@ -10,10 +11,10 @@ export default function Home() {
   ];
 
   return (
-    <div>
-      <HeroSection />
-      <FeaturesSection />
-      <UpcomingEvents events={demoEvents} />
+    <div className="reveal-seq">
+      <Reveal><HeroSection /></Reveal>
+      <Reveal delay={100}><FeaturesSection /></Reveal>
+      <Reveal delay={200}><UpcomingEvents events={demoEvents} /></Reveal>
     </div>
   );
 }

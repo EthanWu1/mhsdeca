@@ -5,7 +5,7 @@ import { Home as HomeIcon, UserPlus, Users, Calendar } from "lucide-react";
 const nav = [
   { title: "Home", url: "/", icon: HomeIcon },
   { title: "Join DECA", url: "/join", icon: UserPlus },
-  { title: "Members", url: "/dashboard", icon: Users },
+  { title: "Officers", url: "/officers", icon: Users },
   { title: "Events", url: "/events", icon: Calendar },
 ];
 
@@ -13,7 +13,7 @@ export default function Layout({ children }) {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden">
+    <div className="min-h-screen relative overflow-x-hidden" style={{minHeight:"100vh", display:"flex", flexDirection:"column"}}>
       <nav style={{ position: "fixed", top: 24, left: "50%", transform: "translateX(-50%)", zIndex: 50 }}>
         <div style={{ background: "rgba(255,255,255,0.9)", backdropFilter: "blur(12px)", border: "1px solid rgba(229,231,235,0.8)", borderRadius: 9999, padding: "12px 24px", boxShadow: "0 8px 24px rgba(0,0,0,0.08)"}}>
           <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
@@ -47,7 +47,7 @@ export default function Layout({ children }) {
         <div style={{ position: "absolute", bottom: -160, left: -160, width: 320, height: 320, background: "rgba(248,113,113,0.12)", borderRadius: "9999px", filter: "blur(48px)" }}></div>
       </div>
 
-      <main style={{ position: "relative", zIndex: 10, paddingTop: 96 }}>
+      <main style={{ position: "relative", zIndex: 10, paddingTop: 96, flex: 1 }}>
         {children}
       </main>
 
