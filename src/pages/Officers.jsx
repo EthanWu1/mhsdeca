@@ -22,22 +22,23 @@ export default function Officers() {
       document.execCommand("copy");
       document.body.removeChild(el);
     }
-    // Create animated circular toast at center-top
+    // Rectangular toast at center-top
     const toast = document.createElement("div");
     toast.textContent = "Copied!";
     Object.assign(toast.style, {
       position: "fixed",
-      top: "40px",
+      top: "28px",
       left: "50%",
-      transform: "translateX(-50%) scale(0.9)",
-      background: "white",
+      transform: "translateX(-50%) scale(0.98)",
+      background: "#ffffff",
       color: "#111827",
-      border: "2px solid #ef4444",
-      width: "100px",
-      height: "100px",
+      border: "none",
+      padding: "14px 24px",
+      minWidth: "160px",
+      height: "48px",
       display: "grid",
       placeItems: "center",
-      borderRadius: "9999px",
+      borderRadius: "12px",
       fontWeight: "800",
       boxShadow: "0 14px 40px rgba(0,0,0,0.18)",
       zIndex: 1000,

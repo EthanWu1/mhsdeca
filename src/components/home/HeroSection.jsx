@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
-    <section style={{ minHeight: "80vh", display: "grid", placeItems: "center", padding: "0 24px" }}>
+    <section style={{ position: "relative" }} style={{ minHeight: "80vh", display: "grid", placeItems: "center", padding: "0 24px" }}>
       <div style={{ maxWidth: 960, textAlign: "center" }}>
         <div style={{ display: "flex", justifyContent: "center", marginBottom: 16 }}>
           <img className="hero-logo logo-hover-spin" src={logoPadded} alt="DECA Logo" className="hero-logo logo-spin" style={{ height: "clamp(80px, 18vw, 140px)", width: "auto" }} />
@@ -18,6 +18,14 @@ export default function HeroSection() {
           <Link to="/events" style={{ padding: "12px 16px", borderRadius: 12, background: "white", border: "1px solid #e5e7eb", color: "#111827", fontWeight: 700 }}>See Events</Link>
         </div>
       </div>
+    
+      {/* Scroll-down arrow */}
+      <div style={{ position: "absolute", bottom: "20px", left: "50%", transform: "translateX(-50%)" }}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#6b7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="bounce-arrow">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </div>
+
     </section>
   );
 }
