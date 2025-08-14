@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home as HomeIcon, UserPlus, Users, Calendar } from "lucide-react";
+import logoPadded from "./assets/logo_padded.webp";
+import instaImg from "./assets/instagram.webp";
+import remindImg from "./assets/remind.webp";
 import instaImg from "./assets/instagram.webp";
 import remindImg from "./assets/remind.png";
 
@@ -62,11 +65,7 @@ export default function Layout({ children }) {
                   justifyContent: "center",
                 }}
               >
-                <img
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3e398a9e8_download.png"
-                  alt="DECA Logo"
-                  className="brand-logo" style={{ height: 28, width: "auto" }}
-                />
+                <img src={logoPadded} alt="DECA Logo" className="footer-logo" style={{ height: 24, width: "auto", objectFit: "contain" }} />
               </div>
               <span style={{ fontWeight: 800, fontSize: 18, letterSpacing: "-0.02em" }}>
                 Memorial DECA
@@ -217,22 +216,18 @@ export default function Layout({ children }) {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <img
-              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3e398a9e8_download.png"
-              alt="DECA Logo"
-              style={{ height: 24, width: "auto" }}
-            />
+            <img src={logoPadded} alt="DECA Logo" className="brand-logo" style={{ height: 28, width: "auto", objectFit: "contain" }} />
             <span style={{ fontWeight: 800 }}>Memorial DECA</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
             <a href="mailto:decamemorialclub@gmail.com" style={{ color: "#64748b", fontSize: 14 }}>
               decamemorialclub@gmail.com
             </a>
-            <a href="https://www.instagram.com/deca_memorialhs/" target="_blank" rel="noreferrer" aria-label="Instagram" style={{ display:"inline-flex", alignItems:"center", justifyContent:"center" }}>
-  <img src={instaImg} alt="Instagram" style={{ width: 22, height: 22, borderRadius: 6 }} />
+            <a href="https://www.instagram.com/deca_memorialhs/" target="_blank" rel="noreferrer" aria-label="Instagram" className="footer-social" style={{ display:"inline-flex", alignItems:"center", justifyContent:"center" }}>
+  <img src={instaImg} alt="Instagram" />
 </a>
-            <a href="https://www.remind.com/join/deca4ever" target="_blank" rel="noreferrer" aria-label="Remind" style={{ display:"inline-flex", alignItems:"center", justifyContent:"center" }}>
-  <img src={remindImg} alt="Remind" style={{ width: 22, height: 22, borderRadius: 6 }} />
+            <a href="https://www.remind.com/join/deca4ever" target="_blank" rel="noreferrer" aria-label="Remind" className="footer-social" style={{ display:"inline-flex", alignItems:"center", justifyContent:"center" }}>
+  <img src={remindImg} alt="Remind" />
 </a>
           </div>
         </div>

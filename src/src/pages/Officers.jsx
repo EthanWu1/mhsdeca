@@ -3,6 +3,10 @@ import Reveal from "../Reveal.jsx";
 
 export default function Officers() {
   const officers = [
+  { name: "Vice President", role: "Open" },
+  { name: "Secretary", role: "Open" },
+  { name: "Treasurer", role: "Open" },
+  { name: "Public Relations", role: "Open" },
     { id: 1, name: "Ethan Wu", role: "Co‑Founder", email: "wueth000@mysbisd.org" },
     { id: 2, name: "Brendan Liu", role: "Co‑Founder", email: "liubre000@mysbisd.org" },
   ];

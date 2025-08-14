@@ -96,3 +96,31 @@ img { display: block; max-width: 100%; height: auto; }
     height: 24px;
   }
 }
+
+
+/* === Mobile nav + logos + hover spin (added) === */
+@keyframes spinEase {
+  0% { transform: rotate(0deg); }
+  30% { transform: rotate(360deg); }   /* speed up */
+  70% { transform: rotate(360deg); }   /* slow/stop hold */
+  100% { transform: rotate(360deg); }  /* end cycle */
+}
+.logo-hover-spin:hover { animation: spinEase 3.2s cubic-bezier(0.3, 0.7, 0.2, 1) 1; }
+
+.brand-logo, .footer-logo { height: 28px; width: auto; object-fit: contain; }
+@media (max-width: 640px) {
+  .brand-logo { height: 24px; width: auto; object-fit: contain; }
+}
+.hero-logo { height: clamp(90px, 20vw, 150px); width: auto; object-fit: contain; }
+
+.nav-links { display: flex; gap: 16px; align-items: center; }
+.nav-mobile-btn { display: none; }
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-mobile-btn { display: inline-flex; }
+}
+.mobile-menu-panel {
+  position: fixed; top: 92px; left: 0; right: 0; z-index: 49;
+  max-height: calc(100vh - 100px); overflow-y: auto;
+}
+.footer-social img { width: 22px; height: 22px; border-radius: 6px; display: block; }
