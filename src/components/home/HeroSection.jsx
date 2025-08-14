@@ -1,4 +1,4 @@
-import logoPadded from "../../assets/logo_padded.webp";
+import logoPadded from "../../assets/logo_new.png";
 import React from "react";
 import { Link } from "react-router-dom";
 

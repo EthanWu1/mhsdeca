@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home as HomeIcon, UserPlus, Users, Calendar } from "lucide-react";
 
-import logoPadded from "./assets/logo_padded.webp";
+import logoPadded from "./assets/logo_new.png";
 import instaImg from "./assets/instagram.webp";
 import remindImg from "./assets/remind.webp";
 

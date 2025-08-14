@@ -8,7 +8,7 @@ export default function Join() {
     <div style={{ minHeight: "60vh", display: "grid", placeItems: "center", padding: "64px 24px" }}>
       <Reveal>
         <div style={{ maxWidth: 720, textAlign: "center", background: "white", border: "1px solid #e5e7eb", borderRadius: 16, padding: 24 }}>
-          \1
+          <h1 style={{ fontSize: 40, fontWeight: 800, marginBottom: 12 }}>Join DECA</h1>
 
 {/* CTE Requirement Notice */}
 <div style={{ marginTop: 16, padding: 16, border: "1px solid #e5e7eb", borderRadius: 12, background: "#fff8f8" }}>

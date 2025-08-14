@@ -14,7 +14,6 @@ export default function Officers() {
   const copy = async (text) => {
     try {
       await navigator.clipboard.writeText(text);
-      alert(`Copied: ${text}`);
     } catch {
       const el = document.createElement("input");
       el.value = text;
@@ -22,8 +21,39 @@ export default function Officers() {
       el.select();
       document.execCommand("copy");
       document.body.removeChild(el);
-      alert(`Copied: ${text}`);
     }
+    // Create animated circular toast at center-top
+    const toast = document.createElement("div");
+    toast.textContent = "Copied!";
+    Object.assign(toast.style, {
+      position: "fixed",
+      top: "40px",
+      left: "50%",
+      transform: "translateX(-50%) scale(0.9)",
+      background: "white",
+      color: "#111827",
+      border: "2px solid #ef4444",
+      width: "100px",
+      height: "100px",
+      display: "grid",
+      placeItems: "center",
+      borderRadius: "9999px",
+      fontWeight: "800",
+      boxShadow: "0 14px 40px rgba(0,0,0,0.18)",
+      zIndex: 1000,
+      opacity: 0,
+      transition: "opacity .12s ease-out, transform .12s ease-out",
+    });
+    document.body.appendChild(toast);
+    requestAnimationFrame(() => {
+      toast.style.opacity = "1";
+      toast.style.transform = "translateX(-50%) scale(1)";
+    });
+    setTimeout(() => {
+      toast.style.opacity = "0";
+      toast.style.transform = "translateX(-50%) scale(0.95)";
+      setTimeout(() => toast.remove(), 250);
+    }, 1000);
   };
 
   return (
