@@ -18,11 +18,6 @@ export default function Events() {
       {/* Card */}
       <Reveal>
         <section className="events-card" role="status" aria-live="polite" tabIndex="0">
-          <div className="events-card-calendar" aria-hidden="true">
-            {/* Simple calendar glyph */}
-            <div className="cal-bar" />
-            <div className="cal-body" />
-          </div>
           <h2 className="events-card-title">No Events Scheduled</h2>
           <p className="events-card-text">
             Our calendar is currently clear. Please check back soon for updates on upcoming meetings,
