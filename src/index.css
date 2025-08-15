@@ -46,8 +46,7 @@ img { display: block; max-width: 100%; height: auto; }
 /* Nav: hide desktop links on small screens; show hamburger */
 .nav-links { display: flex; gap: 16px; align-items: center; }
 .nav-mobile { display: none; }
-@media (max-width: 768px) {
-  .nav-links { display: none; }
+@media (max-width: 768px) { .nav-links { display: none !important; } .nav-mobile-btn { display: inline-flex; } }
   .nav-mobile { display: block; }
 }
 
@@ -55,8 +54,7 @@ img { display: block; max-width: 100%; height: auto; }
 /* Mobile nav rules */
 .nav-links { display: flex; gap: 16px; align-items: center; }
 .nav-mobile-btn { display: none; }
-@media (max-width: 768px) {
-  .nav-links { display: none; }
+@media (max-width: 768px) { .nav-links { display: none !important; } .nav-mobile-btn { display: inline-flex; } }
   .nav-mobile-btn { display: inline-flex; }
 }
 /* Mobile dropdown panel */
@@ -115,15 +113,14 @@ img { display: block; max-width: 100%; height: auto; }
 
 .nav-links { display: flex; gap: 16px; align-items: center; }
 .nav-mobile-btn { display: none; }
-@media (max-width: 768px) {
-  .nav-links { display: none; }
+@media (max-width: 768px) { .nav-links { display: none !important; } .nav-mobile-btn { display: inline-flex; } }
   .nav-mobile-btn { display: inline-flex; }
 }
 .mobile-menu-panel {
   position: fixed; top: 92px; left: 0; right: 0; z-index: 49;
   max-height: calc(100vh - 100px); overflow-y: auto;
 }
-.footer-social img { width: 22px; height: 22px; border-radius: 6px; display: block; }
+.footer-social img { width: 22px; height: 22px; border-radius: 6px; display: block; object-fit: contain; }
 
 
 /* Reveal animations */
@@ -154,4 +151,6 @@ img { display: block; max-width: 100%; height: auto; }
 .hero-logo { animation: spinPause 6s cubic-bezier(.33,.66,.33,1) infinite; }
 
 /* Footer icons equal size */
-.footer-social img, .footer-logo, .brand-logo { width: 22px; height: 22px; border-radius: 6px; }
+.footer-social img { width: 22px; height: 22px; border-radius: 6px; display: block; object-fit: contain; }
+
+.footer-icons img { width: 22px; height: 22px; border-radius: 6px; object-fit: contain; display:block; }
