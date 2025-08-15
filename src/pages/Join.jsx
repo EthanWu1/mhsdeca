@@ -14,7 +14,7 @@ export default function Join() {
 
         <div style={{ display: "flex", justifyContent: "center" }}>
           <a
-            href="https://forms.gle/"
+            href="https://forms.gle/JgPeJ1Arum4HKAtm6"
             target="_blank"
             rel="noreferrer"
             style={{
