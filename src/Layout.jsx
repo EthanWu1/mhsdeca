@@ -233,8 +233,8 @@ export default function Layout({ children }) {
             <a href="mailto:decamemorialclub@gmail.com" style={{ color: "#64748b", fontSize: 14 }}>
               decamemorialclub@gmail.com
             </a>
-            <a href="https://www.instagram.com/deca_memorialhs/" target="_blank" rel="noreferrer" aria-label="Instagram" style="{{ color: '#111827', fontWeight: 700 }}">Instagram</a>
-            <a href="https://www.remind.com/join/deca4ever" target="_blank" rel="noreferrer" aria-label="Remind" style="{{ color: '#111827', fontWeight: 700 }}">Remind</a>
+            <a href="https://www.instagram.com/deca_memorialhs/" target="_blank" rel="noreferrer" aria-label="Instagram" style={{ color: "#111827", fontWeight: 700 }}>Instagram</a>
+            <a href="https://www.remind.com/join/deca4ever" target="_blank" rel="noreferrer" aria-label="Remind" style={{ color: "#111827", fontWeight: 700 }}>Remind</a>
           </div>
         </div>
       </footer>

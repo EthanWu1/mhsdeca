@@ -48,7 +48,6 @@ img { display: block; max-width: 100%; height: auto; }
 .nav-mobile { display: none; }
 @media (max-width: 768px) { .nav-links { display: none !important; } .nav-mobile-btn { display: inline-flex; } }
   .nav-mobile { display: block; }
-}
 
 
 /* Mobile nav rules */
@@ -56,7 +55,6 @@ img { display: block; max-width: 100%; height: auto; }
 .nav-mobile-btn { display: none; }
 @media (max-width: 768px) { .nav-links { display: none !important; } .nav-mobile-btn { display: inline-flex; } }
   .nav-mobile-btn { display: inline-flex; }
-}
 /* Mobile dropdown panel */
 .mobile-menu-panel {
   position: absolute;
@@ -121,7 +119,6 @@ img { display: block; max-width: 100%; height: auto; }
 .nav-mobile-btn { display: none; }
 @media (max-width: 768px) { .nav-links { display: none !important; } .nav-mobile-btn { display: inline-flex; } }
   .nav-mobile-btn { display: inline-flex; }
-}
 .mobile-menu-panel {
   position: absolute;
   top: 62px;
