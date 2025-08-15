@@ -58,7 +58,7 @@ img { display: block; max-width: 100%; height: auto; }
 /* Mobile dropdown panel */
 .mobile-menu-panel {
   position: absolute;
-  top: 62px;
+  top: 76px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 49;
@@ -121,7 +121,7 @@ img { display: block; max-width: 100%; height: auto; }
   .nav-mobile-btn { display: inline-flex; }
 .mobile-menu-panel {
   position: absolute;
-  top: 62px;
+  top: 76px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 49;
@@ -204,3 +204,8 @@ img { display: block; max-width: 100%; height: auto; }
   100% { opacity: 1; transform: translateX(-50%) scaleY(1); }
 }
 .panel-animate { animation: panelDrop .22s ease; }
+.officer-card:hover { 
+  transform: translateY(-2px); 
+  box-shadow: 0 16px 34px rgba(2,6,23,0.08);
+  border-color: #ef4444;
+}

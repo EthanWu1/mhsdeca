@@ -58,10 +58,7 @@ export default function Officers() {
             <div style={{ color: "#64748b" }}>Manage and view DECA chapter officers</div>
           </div>
         </div>
-
-        <div style={{ display: "flex", gap: 12, alignItems: "center", background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 12, marginBottom: 16, boxShadow: "0 6px 16px rgba(2,6,23,0.04)" }}>
-          <div style={{ flex: 1, border: "1px solid #e5e7eb", borderRadius: 10, padding: "10px 12px", color: "#94a3b8" }}>Search officers…</div>
-          <div style={{ width: 160, border: "1px solid #e5e7eb", borderRadius: 10, padding: "10px 12px", color: "#111827", background: "#fff" }}>All Roles ▾</div>
+<div style={{ width: 160, border: "1px solid #e5e7eb", borderRadius: 10, padding: "10px 12px", color: "#111827", background: "#fff" }}>All Roles ▾</div>
           <div style={{ width: 160, border: "1px solid #e5e7eb", borderRadius: 10, padding: "10px 12px", color: "#111827", background: "#fff" }}>All Grades ▾</div>
         </div>
 
@@ -71,7 +68,7 @@ export default function Officers() {
           <div style={{ display: "grid", gap: 12 }}>
             {officers.map((o, idx) => (
               <Reveal key={(o.id||idx) + o.name} delay={idx * 70}>
-                <div style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 14, boxShadow: "0 8px 22px rgba(2,6,23,0.05)" }}>
+                <div className="officer-card" style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 14, boxShadow: "0 8px 22px rgba(2,6,23,0.05)", transition: "transform .14s ease, box-shadow .14s ease, border-color .14s ease" }}>
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 12, minWidth: 0 }}>
                       <div style={{ width: 36, height: 36, borderRadius: 999, background: "#ef4444", color: "white", display: "grid", placeItems: "center", fontWeight: 800 }}>
