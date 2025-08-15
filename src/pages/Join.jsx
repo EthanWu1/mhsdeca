@@ -1,6 +1,5 @@
 import React from "react";
 import Reveal from "../Reveal.jsx";
-import fire from "../assets/fire.png";
 import check from "../assets/check.png";
 import external from "../assets/external.png";
 
