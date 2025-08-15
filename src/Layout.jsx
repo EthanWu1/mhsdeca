@@ -135,8 +135,13 @@ export default function Layout({ children }) {
             </div>
 
             {/* Mobile toggle (CSS will show/hide via .nav-mobile-btn / .nav-links media queries) */}
-            <button className="nav-mobile-btn" aria-label="Toggle menu" onClick={() = ref={buttonRef} ref={buttonRef} onClick={() => setMenuOpen(v => !v)} > setMenuOpen(v=>!v)}
-              style={{ border: "1px solid #e5e7eb", background: "#fff", padding: 8, borderRadius: 10 }}>
+            <button
+              className="nav-mobile-btn"
+              aria-label="Toggle menu"
+              ref={buttonRef}
+              onClick={() => setMenuOpen(v => !v)}
+              style={{ border: "1px solid #e5e7eb", background: "#fff", padding: 8, borderRadius: 10 }}
+            >
               <div className={menuOpen ? "ham ham-open" : "ham"} aria-hidden="true">
                 <span></span><span></span><span></span>
               </div>
