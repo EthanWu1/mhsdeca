@@ -198,7 +198,7 @@ export default function Layout({ children }) {
       )}
 
       {/* Main content */}
-      <main style={{ position: "relative", zIndex: 10, paddingTop: 96, flex: 1 }}>{children}</main>
+      <main style={{ position: "relative", zIndex: 10, paddingTop: 96, flex: 1 }} key={location.pathname}><div className="page-fade">{children}</div></main>
 
       {/* Footer */}
       <footer
@@ -242,7 +242,7 @@ export default function Layout({ children }) {
               aria-label="Instagram"
               style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}
             >
-              <img src={instaImg} alt="Instagram" style={{ width: 22, height: 22, borderRadius: 6 }} />
+              <img src={instaImg} alt="Instagram" className="footer-icon" />
             </a>
             <a
               href="https://www.remind.com/join/deca4ever"
@@ -251,7 +251,7 @@ export default function Layout({ children }) {
               aria-label="Remind"
               style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}
             >
-              <img src={remindImg} alt="Remind" style={{ width: 22, height: 22, borderRadius: 6 }} />
+              <img src={remindImg} alt="Remind" className="footer-icon" />
             </a>
           </div>
         </div>

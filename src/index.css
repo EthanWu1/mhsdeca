@@ -59,13 +59,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 /* Mobile dropdown panel */
 .mobile-menu-panel {
-  position: fixed;
-  top: 92px;
-  left: 0;
-  right: 0;
-  z-index: 49;
-  max-height: calc(100vh - 100px);
-  overflow-y: auto;
+  position: absolute; top: 62px; left: 0; right: 0; z-index: 49;
+  max-height: none; overflow: visible;
 }
 
 
@@ -117,8 +112,8 @@ img { display: block; max-width: 100%; height: auto; }
   .nav-mobile-btn { display: inline-flex; }
 }
 .mobile-menu-panel {
-  position: fixed; top: 92px; left: 0; right: 0; z-index: 49;
-  max-height: calc(100vh - 100px); overflow-y: auto;
+  position: absolute; top: 62px; left: 0; right: 0; z-index: 49;
+  max-height: none; overflow: visible;
 }
 .footer-social img { width: 22px; height: 22px; border-radius: 6px; display: block; object-fit: contain; }
 
@@ -162,8 +157,7 @@ img { display: block; max-width: 100%; height: auto; }
 .nav-mobile-btn:hover .ham span { background: #0f172a; }
 
 /* Overlay for mobile menu */
-.mobile-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.25); z-index: 48; opacity: 0; pointer-events: none; transition: opacity .2s ease; }
-.mobile-overlay.show { opacity: 1; pointer-events: auto; }
+
 
 /* Animated menu items */
 .mobile-menu-panel a { opacity: 0; transform: translateY(4px); transition: opacity .2s ease, transform .2s ease; }
@@ -172,3 +166,15 @@ img { display: block; max-width: 100%; height: auto; }
 .mobile-menu-panel.show a:nth-child(2){ transition-delay: .05s; }
 .mobile-menu-panel.show a:nth-child(3){ transition-delay: .08s; }
 .mobile-menu-panel.show a:nth-child(4){ transition-delay: .11s; }
+
+
+/* Global page fade-in on route change */
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-fade { animation: pageFade 420ms cubic-bezier(.2,.8,.2,1); }
+
+/* Why DECA card hover */
+.card-hover { transition: transform .16s ease, box-shadow .16s ease; }
+.card-hover:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(2,6,23,.08) !important; }
