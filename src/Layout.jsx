@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home as HomeIcon, UserPlus, Users, Calendar } from "lucide-react";
 
@@ -14,6 +14,33 @@ const nav = [
 export default function Layout({ children }) {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const panelRef = useRef(null);
+  const buttonRef = useRef(null);
+  // Close menu on outside interactions
+  useEffect(() => {
+    const onPointer = (e) => {
+      if (!menuOpen) return;
+      const panel = panelRef.current;
+      const btn = buttonRef.current;
+      if (panel && !panel.contains(e.target) && btn && !btn.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    };
+    const onScroll = () => menuOpen && setMenuOpen(false);
+    const onResize = () => menuOpen && setMenuOpen(false);
+    const onTouchMove = () => menuOpen && setMenuOpen(false);
+    document.addEventListener("pointerdown", onPointer);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+    window.addEventListener("touchmove", onTouchMove, { passive: true });
+    return () => {
+      document.removeEventListener("pointerdown", onPointer);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("touchmove", onTouchMove);
+    };
+  }, [menuOpen]);
+
 
   return (
     <div
@@ -108,7 +135,7 @@ export default function Layout({ children }) {
             </div>
 
             {/* Mobile toggle (CSS will show/hide via .nav-mobile-btn / .nav-links media queries) */}
-            <button className="nav-mobile-btn" aria-label="Toggle menu" onClick={() => setMenuOpen(v=>!v)}
+            <button className="nav-mobile-btn" aria-label="Toggle menu" onClick={() = ref={buttonRef}> setMenuOpen(v=>!v)}
               style={{ border: "1px solid #e5e7eb", background: "#fff", padding: 8, borderRadius: 10 }}>
               <div className={menuOpen ? "ham ham-open" : "ham"} aria-hidden="true">
                 <span></span><span></span><span></span>
