@@ -38,11 +38,22 @@ export default function Join() {
           </a>
         </div>
 
-        {/* Bottom CTE eligibility box */}
+        {/* CTE Eligibility */}
         <div style={{ marginTop: 28, display: "grid", gap: 16 }}>
-          <div style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 16, padding: 18, maxWidth: 820, margin: "0 auto",
-                        boxShadow: "0 10px 26px rgba(2,6,23,.06)", transition: "transform .15s ease" }}
-               onMouseEnter={(e)=>e.currentTarget.style.transform="scale(1.01)"} onMouseLeave={(e)=>e.currentTarget.style.transform="scale(1)"}>
+          <div
+            style={{
+              background: "#fff",
+              border: "1px solid #e5e7eb",
+              borderRadius: 16,
+              padding: 18,
+              maxWidth: 820,
+              margin: "0 auto",
+              boxShadow: "0 10px 26px rgba(2,6,23,.06)",
+              transition: "transform .15s ease",
+            }}
+            onMouseEnter={(e)=>e.currentTarget.style.transform="scale(1.01)"}
+            onMouseLeave={(e)=>e.currentTarget.style.transform="scale(1)"}
+          >
             <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
               <img src={check} alt="" width="28" height="28" style={{ marginTop: 2 }} />
               <div style={{ textAlign: "left" }}>
@@ -53,14 +64,8 @@ export default function Join() {
               </div>
             </div>
           </div>
-
-          {/* Remind & Instagram boxes */}
-          <div style={{ display: "grid", gap: 16 }}>
-            <div style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 16, padding: 16, maxWidth: 820, margin: "0 auto",
-                          boxShadow: "0 8px 20px rgba(2,6,23,.05)", transition: "transform .15s ease" }}
-                 onMouseEnter={(e)=>e.currentTarget.style.transform="scale(1.01)"} onMouseLeave={(e)=>e.currentTarget.style.transform="scale(1)"}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <div style={{ fontWeight: 800 }}>
+        </div>
+      </div>
+    </div>
   );
 }
