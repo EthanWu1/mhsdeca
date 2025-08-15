@@ -59,8 +59,19 @@ img { display: block; max-width: 100%; height: auto; }
 }
 /* Mobile dropdown panel */
 .mobile-menu-panel {
-  position: absolute; top: 62px; left: 0; right: 0; z-index: 49;
-  max-height: none; overflow: visible;
+  position: absolute;
+  top: 62px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 49;
+  width: min(92vw, 420px);
+  max-height: none;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(2,6,23,.14);
+  transform-origin: top center;
 }
 
 
@@ -112,8 +123,19 @@ img { display: block; max-width: 100%; height: auto; }
   .nav-mobile-btn { display: inline-flex; }
 }
 .mobile-menu-panel {
-  position: absolute; top: 62px; left: 0; right: 0; z-index: 49;
-  max-height: none; overflow: visible;
+  position: absolute;
+  top: 62px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 49;
+  width: min(92vw, 420px);
+  max-height: none;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(2,6,23,.14);
+  transform-origin: top center;
 }
 .footer-social img { width: 22px; height: 22px; border-radius: 6px; display: block; object-fit: contain; }
 
@@ -135,7 +157,7 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* Mobile panel animation */
 .panel-animate { transform-origin: top center; animation: panelPop .22s ease; }
-@keyframes panelPop { from { opacity: 0; transform: scaleY(.96); } to { opacity: 1; transform: scaleY(1); } }
+
 
 /* Scroll arrow bounce */
 @keyframes bounce { 0%,20%,50%,80%,100%{ transform: translateY(0); } 40%{ transform: translateY(-6px); } 60%{ transform: translateY(-3px);} }
@@ -178,3 +200,10 @@ img { display: block; max-width: 100%; height: auto; }
 /* Why DECA card hover */
 .card-hover { transition: transform .16s ease, box-shadow .16s ease; }
 .card-hover:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(2,6,23,.08) !important; }
+
+/* Top-to-bottom dropdown animation */
+@keyframes panelDrop {
+  0% { opacity: 0; transform: translateX(-50%) scaleY(.85); }
+  100% { opacity: 1; transform: translateX(-50%) scaleY(1); }
+}
+.panel-animate { animation: panelDrop .22s ease; }

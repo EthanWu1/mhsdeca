@@ -3,8 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { Home as HomeIcon, UserPlus, Users, Calendar } from "lucide-react";
 
 import logoPadded from "./assets/logo_new.png";
-import instaImg from "./assets/instagram.webp";
-import remindImg from "./assets/remind.webp";
 
 const nav = [
   { title: "Home", url: "/", icon: HomeIcon },
@@ -235,24 +233,8 @@ export default function Layout({ children }) {
             <a href="mailto:decamemorialclub@gmail.com" style={{ color: "#64748b", fontSize: 14 }}>
               decamemorialclub@gmail.com
             </a>
-            <a
-              href="https://www.instagram.com/deca_memorialhs/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}
-            >
-              <img src={instaImg} alt="Instagram" className="footer-icon" />
-            </a>
-            <a
-              href="https://www.remind.com/join/deca4ever"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Remind"
-              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}
-            >
-              <img src={remindImg} alt="Remind" className="footer-icon" />
-            </a>
+            <a href="https://www.instagram.com/deca_memorialhs/" target="_blank" rel="noreferrer" aria-label="Instagram" style="{{ color: '#111827', fontWeight: 700 }}">Instagram</a>
+            <a href="https://www.remind.com/join/deca4ever" target="_blank" rel="noreferrer" aria-label="Remind" style="{{ color: '#111827', fontWeight: 700 }}">Remind</a>
           </div>
         </div>
       </footer>
