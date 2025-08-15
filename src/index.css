@@ -154,3 +154,21 @@ img { display: block; max-width: 100%; height: auto; }
 .footer-social img { width: 22px; height: 22px; border-radius: 6px; display: block; object-fit: contain; }
 
 .footer-icons img { width: 22px; height: 22px; border-radius: 6px; object-fit: contain; display:block; }
+
+
+/* Hamburger hover */
+.nav-mobile-btn .ham { transition: transform .15s ease; }
+.nav-mobile-btn:hover .ham { transform: scale(1.06); }
+.nav-mobile-btn:hover .ham span { background: #0f172a; }
+
+/* Overlay for mobile menu */
+.mobile-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.25); z-index: 48; opacity: 0; pointer-events: none; transition: opacity .2s ease; }
+.mobile-overlay.show { opacity: 1; pointer-events: auto; }
+
+/* Animated menu items */
+.mobile-menu-panel a { opacity: 0; transform: translateY(4px); transition: opacity .2s ease, transform .2s ease; }
+.mobile-menu-panel.show a { opacity: 1; transform: translateY(0); }
+.mobile-menu-panel.show a:nth-child(1){ transition-delay: .02s; }
+.mobile-menu-panel.show a:nth-child(2){ transition-delay: .05s; }
+.mobile-menu-panel.show a:nth-child(3){ transition-delay: .08s; }
+.mobile-menu-panel.show a:nth-child(4){ transition-delay: .11s; }

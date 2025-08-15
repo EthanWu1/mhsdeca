@@ -1,38 +1,58 @@
 import React from "react";
 import Reveal from "../Reveal.jsx";
-import instaImg from "../assets/instagram.webp";
-import remindImg from "../assets/remind.png";
+import logo from "../assets/logo_new.png";
 
 export default function Join() {
   return (
-    <div style={{ minHeight: "60vh", display: "grid", placeItems: "center", padding: "64px 24px" }}>
-      <Reveal>
-        <div style={{ maxWidth: 720, textAlign: "center", background: "white", border: "1px solid #e5e7eb", borderRadius: 16, padding: 24 }}>
-          <h1 style={{ fontSize: 40, fontWeight: 800, marginBottom: 12 }}>Join DECA</h1>
+    <div style={{ minHeight: "70vh", display: "grid", placeItems: "center", padding: "80px 24px" }}>
+      <div style={{ maxWidth: 820, textAlign: "center" }}>
+        {/* Small tilted logo */}
+        <img src={logo} alt="DECA" style={{ width: 36, height: 36, margin: "0 auto 12px", transform: "rotate(-20deg)" }} />
 
-{/* CTE Requirement Notice */}
-<div style={{ marginTop: 16, padding: 16, border: "1px solid #e5e7eb", borderRadius: 12, background: "#fff8f8" }}>
-  <strong>Eligibility:</strong> Students must be currently enrolled in, or have previously enrolled in, a <em>CTE‑approved</em> course.
-  <div style={{ marginTop: 8 }}>
-    You can confirm this by checking the school’s course catalog. If you’re unsure, ask a counselor or DECA advisor.
-  </div>
-</div>
+        <h1 style={{ fontSize: "clamp(36px, 6vw, 56px)", fontWeight: 900, margin: 0 }}>Join Our Chapter</h1>
+        <p style={{ color: "#64748b", fontSize: 18, maxWidth: 720, margin: "12px auto 22px", lineHeight: 1.6 }}>
+          Ready to become a part of Memorial DECA? Click the button below to fill out our official membership application on Google Forms.
+        </p>
 
-          <p style={{ color: "#475569", marginBottom: 16 }}></p>
-          <a href="https://forms.gle/JgPeJ1Arum4HKAtm6" target="_blank" rel="noreferrer" style={{ padding: "12px 16px", borderRadius: 12, background: "#ef4444", color: "white", fontWeight: 700, display: "inline-block" }}>
-            Register Now
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <a
+            href="https://forms.gle/"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              background: "linear-gradient(180deg,#ef4444,#dc2626)",
+              color: "white",
+              fontWeight: 800,
+              padding: "16px 28px",
+              borderRadius: 999,
+              boxShadow: "0 20px 50px rgba(239,68,68,.25)",
+            }}
+          >
+            Go to Application Form
+            <span aria-hidden="true">↗</span>
           </a>
         </div>
-      </Reveal>
+
+        {/* Bottom CTE eligibility box */}
+        <div style={{ marginTop: 28, display: "grid", placeItems: "center" }}>
+          <div style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 16, padding: 18, maxWidth: 820, boxShadow: "0 10px 26px rgba(2,6,23,.06)" }}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+              <div style={{ width: 32, height: 32, borderRadius: 9999, background: "#dcfce7", display: "grid", placeItems: "center" }}>
+                <span style={{ color: "#16a34a", fontWeight: 900 }}>✓</span>
+              </div>
+              <div style={{ textAlign: "left" }}>
+                <div style={{ fontWeight: 800, marginBottom: 4 }}>CTE Eligibility</div>
+                <div style={{ color: "#64748b" }}>
+                  Students must be currently enrolled in, or have previously completed, a <em>CTE‑approved</em> course to be eligible for DECA membership.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
-
-<div style={{ marginTop: 24, padding: 16, border: "1px solid #e5e7eb", borderRadius: 12, background: "#fff" }}>
-  <strong>Stay Connected</strong>
-  <div style={{ marginTop: 8 }}>
-    Follow us on <a href="https://www.instagram.com/deca_memorialhs/" target="_blank" rel="noreferrer" style={{ color: "#db2777", fontWeight: 700 }}>Instagram</a>
-    {" "}and join our <a href="https://www.remind.com/join/deca4ever" target="_blank" rel="noreferrer" style={{ color: "#2563eb", fontWeight: 700 }}>Remind</a> for updates.
-  </div>
-</div>
