@@ -1,3 +1,31 @@
+
+:root {
+  --nav-height: 64px; /* desktop navbar height */
+  --menu-gap: 10px;   /* desktop gap */
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 56px; /* mobile navbar height */
+    --menu-gap: 12px;   /* mobile gap */
+  }
+}
+
+.mobile-menu-panel {
+  position: absolute;
+  top: calc(var(--nav-height) + var(--menu-gap));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 49;
+  width: min(92vw, 420px);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(2,6,23,.14);
+  transform-origin: top center;
+}
+
 :root{ --nav-height: 64px; --menu-gap: 14px; }
 /* Minimal reset + system font stack */
 * { box-sizing: border-box; }
@@ -57,20 +85,7 @@ img { display: block; max-width: 100%; height: auto; }
 @media (max-width: 768px) { .nav-links { display: none !important; } .nav-mobile-btn { display: inline-flex; } }
   .nav-mobile-btn { display: inline-flex; }
 /* Mobile dropdown panel */
-.mobile-menu-panel {
-  position: absolute;
-  top: calc(var(--nav-height) + var(--menu-gap)); /* space below navbar */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 49;
-  width: min(92vw, 420px);
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  box-shadow: 0 18px 40px rgba(2,6,23,.14);
-  transform-origin: top center;
-}
+
 
 
 /* --- Logo animation & sizing --- */
@@ -119,20 +134,7 @@ img { display: block; max-width: 100%; height: auto; }
 .nav-mobile-btn { display: none; }
 @media (max-width: 768px) { .nav-links { display: none !important; } .nav-mobile-btn { display: inline-flex; } }
   .nav-mobile-btn { display: inline-flex; }
-.mobile-menu-panel {
-  position: absolute;
-  top: calc(var(--nav-height) + var(--menu-gap)); /* space below navbar */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 49;
-  width: min(92vw, 420px);
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  box-shadow: 0 18px 40px rgba(2,6,23,.14);
-  transform-origin: top center;
-}
+
 .footer-social img { width: 22px; height: 22px; border-radius: 6px; display: block; object-fit: contain; }
 
 
