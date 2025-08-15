@@ -18,7 +18,8 @@ export default function Join() {
   </div>
 </div>
 
-                    <a href="https://forms.gle/JgPeJ1Arum4HKAtm6" target="_blank" rel="noreferrer" style={{ padding: "12px 16px", borderRadius: 12, background: "#ef4444", color: "white", fontWeight: 700, display: "inline-block" }}>
+          <p style={{ color: "#475569", marginBottom: 16 }}></p>
+          <a href="https://forms.gle/JgPeJ1Arum4HKAtm6" target="_blank" rel="noreferrer" style={{ padding: "12px 16px", borderRadius: 12, background: "#ef4444", color: "white", fontWeight: 700, display: "inline-block" }}>
             Register Now
           </a>
         </div>
@@ -27,3 +28,11 @@ export default function Join() {
   );
 }
 
+
+<div style={{ marginTop: 24, padding: 16, border: "1px solid #e5e7eb", borderRadius: 12, background: "#fff" }}>
+  <strong>Stay Connected</strong>
+  <div style={{ marginTop: 8 }}>
+    Follow us on <a href="https://www.instagram.com/deca_memorialhs/" target="_blank" rel="noreferrer" style={{ color: "#db2777", fontWeight: 700 }}>Instagram</a>
+    {" "}and join our <a href="https://www.remind.com/join/deca4ever" target="_blank" rel="noreferrer" style={{ color: "#2563eb", fontWeight: 700 }}>Remind</a> for updates.
+  </div>
+</div>

@@ -1,44 +1,30 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
-export function useReveal(options = {}) {
+export default function Reveal({ children, delay = 0 }) {
   const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { root: null, rootMargin: "0px", threshold: 0.15, ...options }
+
+    const reveal = (show) => {
+      if (show) {
+        el.style.transitionDelay = `${delay}ms`;
+        el.classList.add("reveal-in");
+        el.classList.remove("reveal-out");
+      } else {
+        el.classList.remove("reveal-in");
+        el.classList.add("reveal-out");
+      }
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => reveal(e.isIntersecting)),
+      { threshold: 0.2 }
     );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [options]);
+    io.observe(el);
+    return () => io.disconnect();
+  }, [delay]);
 
-  return { ref, visible };
-}
-
-export default function Reveal({ children, style = {}, delay = 0 }) {
-  const { ref, visible } = useReveal();
-  return (
-    <div
-      ref={ref}
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0px)" : "translateY(12px)",
-        transition: `opacity 600ms ease ${delay}ms, transform 600ms ease ${delay}ms`,
-        willChange: "opacity, transform",
-        ...style,
-      }}
-    >
-      {children}
-    </div>
-  );
+  return <div ref={ref} className="reveal-base">{children}</div>;
 }

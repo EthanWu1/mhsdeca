@@ -18,7 +18,7 @@ export default function Join() {
   </div>
 </div>
 
-          <p style={{ color: "#475569", marginBottom: 16 }}></p>
+          <p style={{ color: "#475569", marginBottom: 16 }}>Open to all students—no experience required.</p>
           <a href="https://forms.gle/JgPeJ1Arum4HKAtm6" target="_blank" rel="noreferrer" style={{ padding: "12px 16px", borderRadius: 12, background: "#ef4444", color: "white", fontWeight: 700, display: "inline-block" }}>
             Register Now
           </a>

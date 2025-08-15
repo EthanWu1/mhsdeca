@@ -110,19 +110,11 @@ export default function Layout({ children }) {
             </div>
 
             {/* Mobile toggle (CSS will show/hide via .nav-mobile-btn / .nav-links media queries) */}
-            <button
-              className="nav-mobile-btn"
-              aria-label="Toggle menu"
-              onClick={() => setMenuOpen((v) => !v)}
-              style={{
-                border: "1px solid #e5e7eb",
-                background: "#fff",
-                padding: "8px 10px",
-                borderRadius: 8,
-                fontWeight: 700,
-              }}
-            >
-              Menu
+            <button className="nav-mobile-btn" aria-label="Toggle menu" onClick={() => setMenuOpen(v=>!v)}
+              style={{ border: "1px solid #e5e7eb", background: "#fff", padding: 8, borderRadius: 10 }}>
+              <div className={menuOpen ? "ham ham-open" : "ham"} aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
             </button>
           </div>
         </div>
@@ -159,7 +151,7 @@ export default function Layout({ children }) {
       {/* Mobile dropdown */}
       {menuOpen && (
         <div
-          className="mobile-menu-panel"
+          className="mobile-menu-panel panel-animate"
           style={{
             position: "fixed",
             top: 92,

@@ -12,38 +12,24 @@ export default function Officers() {
   ];
 
   const copy = async (text) => {
-    try {
-      await navigator.clipboard.writeText(text);
-    } catch {
+    try { await navigator.clipboard.writeText(text); }
+    catch {
       const el = document.createElement("input");
-      el.value = text;
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand("copy");
+      el.value = text; document.body.appendChild(el);
+      el.select(); document.execCommand("copy");
       document.body.removeChild(el);
     }
-    // Rectangular toast at center-top
     const toast = document.createElement("div");
     toast.textContent = "Copied!";
     Object.assign(toast.style, {
-      position: "fixed",
-      top: "28px",
-      left: "50%",
+      position: "fixed", top: "28px", left: "50%",
       transform: "translateX(-50%) scale(0.98)",
-      background: "#ffffff",
-      color: "#111827",
-      border: "none",
-      padding: "14px 24px",
-      minWidth: "160px",
-      height: "48px",
-      display: "grid",
-      placeItems: "center",
-      borderRadius: "12px",
-      fontWeight: "800",
-      boxShadow: "0 14px 40px rgba(0,0,0,0.18)",
-      zIndex: 1000,
-      opacity: 0,
-      transition: "opacity .12s ease-out, transform .12s ease-out",
+      background: "#111827", color: "#fff", border: "none",
+      padding: "12px 18px", minWidth: "140px", height: "42px",
+      display: "grid", placeItems: "center",
+      borderRadius: "12px", fontWeight: 800,
+      boxShadow: "0 14px 40px rgba(0,0,0,0.2)", zIndex: 1000,
+      opacity: 0, transition: "opacity .14s ease-out, transform .14s ease-out",
     });
     document.body.appendChild(toast);
     requestAnimationFrame(() => {
@@ -53,7 +39,7 @@ export default function Officers() {
     setTimeout(() => {
       toast.style.opacity = "0";
       toast.style.transform = "translateX(-50%) scale(0.95)";
-      setTimeout(() => toast.remove(), 250);
+      setTimeout(() => toast.remove(), 220);
     }, 1000);
   };
 
