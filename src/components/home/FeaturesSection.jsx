@@ -33,7 +33,7 @@ export default function FeaturesSection() {
                   }}
                 >
                   <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-                    <div style={{ background: "transparent", color: "#ef4444", width: 36, height: 36, borderRadius: 9999, display: "grid", placeItems: "center", border: "2px solid #ef4444" }}>
+                    <div style={{ background: "transparent", color: "#ef4444", width: 36, height: 36, aspectRatio: "1 / 1", borderRadius: 9999, display: "grid", placeItems: "center", border: "2px solid #ef4444" }}>
                       <Icon size={18} />
                     </div>
                     <div>

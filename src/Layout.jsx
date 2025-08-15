@@ -147,19 +147,9 @@ export default function Layout({ children }) {
       </div>
 
       {/* Mobile dropdown */}
-      {menuOpen && <div className="mobile-overlay show" onClick={() => setMenuOpen(false)}></div>}
       {menuOpen && (
         <div
           className="mobile-menu-panel panel-animate show"
-          style={{
-            position: "fixed",
-            top: 92,
-            left: 0,
-            right: 0,
-            zIndex: 49,
-            maxHeight: "calc(100vh - 100px)",
-            overflowY: "auto",
-          }}
         >
           <div
             style={{

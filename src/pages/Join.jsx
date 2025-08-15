@@ -61,29 +61,6 @@ export default function Join() {
                  onMouseEnter={(e)=>e.currentTarget.style.transform="scale(1.01)"} onMouseLeave={(e)=>e.currentTarget.style.transform="scale(1)"}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <img src={fire} alt="" width="28" height="28" />
-                  <div style={{ fontWeight: 800 }}>Join our Remind</div>
-                </div>
-                <a href="https://www.remind.com/join/deca4ever" target="_blank" rel="noreferrer"
-                   style={{ color: "#2563eb", fontWeight: 800 }}>remind.com/join/deca4ever ↗</a>
-              </div>
-            </div>
-
-            <div style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 16, padding: 16, maxWidth: 820, margin: "0 auto",
-                          boxShadow: "0 8px 20px rgba(2,6,23,.05)", transition: "transform .15s ease" }}
-                 onMouseEnter={(e)=>e.currentTarget.style.transform="scale(1.01)"} onMouseLeave={(e)=>e.currentTarget.style.transform="scale(1)"}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <img src={fire} alt="" width="28" height="28" />
-                  <div style={{ fontWeight: 800 }}>Follow our Instagram</div>
-                </div>
-                <a href="https://www.instagram.com/deca_memorialhs/" target="_blank" rel="noreferrer"
-                   style={{ color: "#db2777", fontWeight: 800 }}>@deca_memorialhs ↗</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                  <div style={{ fontWeight: 800 }}>
   );
 }
