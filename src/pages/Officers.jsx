@@ -1,23 +1,26 @@
 import React from "react";
 import Reveal from "../Reveal.jsx";
+import audience from "../assets/audience.png";
 
 export default function Officers() {
   const officers = [
-  { name: "Vice President", role: "Open" },
-  { name: "Secretary", role: "Open" },
-  { name: "Treasurer", role: "Open" },
-  { name: "Public Relations", role: "Open" },
     { id: 1, name: "Ethan Wu", role: "Co‑Founder", email: "wueth000@mysbisd.org" },
     { id: 2, name: "Brendan Liu", role: "Co‑Founder", email: "liubre000@mysbisd.org" },
+    { id: 3, name: "Vice President", role: "Open", email: "" },
+    { id: 4, name: "Secretary", role: "Open", email: "" },
+    { id: 5, name: "Treasurer", role: "Open", email: "" },
+    { id: 6, name: "Public Relations", role: "Open", email: "" },
   ];
+
+  const gradeOf = (name) => (/(Ethan|Brendan)/i.test(name) ? 10 : null);
+  const initials = (name="") => name.split(" ").map(w=>w[0]).join("").slice(0,2).toUpperCase();
 
   const copy = async (text) => {
     try { await navigator.clipboard.writeText(text); }
     catch {
       const el = document.createElement("input");
       el.value = text; document.body.appendChild(el);
-      el.select(); document.execCommand("copy");
-      document.body.removeChild(el);
+      el.select(); document.execCommand("copy"); document.body.removeChild(el);
     }
     const toast = document.createElement("div");
     toast.textContent = "Copied!";
@@ -46,29 +49,51 @@ export default function Officers() {
   return (
     <div style={{ minHeight: "60vh", padding: "64px 24px" }}>
       <div style={{ maxWidth: 1120, margin: "0 auto" }}>
-        <Reveal><h1 style={{ fontSize: 40, fontWeight: 800, marginBottom: 16 }}>Officers</h1></Reveal>
-        <div className="officers-grid" style={{ display: "grid", gap: 12 }}>
-          {officers.map((o, idx) => (
-            <Reveal key={o.id} delay={idx * 80}>
-              <div style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: 16, padding: 16 }}>
-                <div style={{ fontWeight: 800, marginBottom: 2 }}>{o.name}</div>
-                <div style={{ color: "#475569", marginBottom: 8 }}>{o.role}</div>
-                <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-                  <a href={`mailto:${o.email}`} style={{ color: "#2563eb", fontWeight: 600 }}>{o.email}</a>
-                  <button
-                    onClick={() => copy(o.email)}
-                    aria-label={`Copy ${o.name}'s email`}
-                    title="Copy email"
-                    style={{ border: "1px solid #e5e7eb", background: "#fff", padding: "6px 8px", borderRadius: 8, cursor: "pointer" }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M16 1H4c-1.1 0-2 .9-2 2v12h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
-                    </svg>
-                  </button>
+        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+          <div style={{ width: 40, height: 40, borderRadius: 12, background: "#ef4444", display: "grid", placeItems: "center" }}>
+            <img src={audience} alt="" width="22" height="22" style={{ filter: "invert(1)", display: "block" }} />
+          </div>
+          <div>
+            <h1 style={{ fontSize: 40, fontWeight: 800, margin: 0 }}>Officers</h1>
+            <div style={{ color: "#64748b" }}>Manage and view DECA chapter officers</div>
+          </div>
+        </div>
+
+        <div style={{ display: "flex", gap: 12, alignItems: "center", background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 12, marginBottom: 16, boxShadow: "0 6px 16px rgba(2,6,23,0.04)" }}>
+          <div style={{ flex: 1, border: "1px solid #e5e7eb", borderRadius: 10, padding: "10px 12px", color: "#94a3b8" }}>Search officers…</div>
+          <div style={{ width: 160, border: "1px solid #e5e7eb", borderRadius: 10, padding: "10px 12px", color: "#111827", background: "#fff" }}>All Roles ▾</div>
+          <div style={{ width: 160, border: "1px solid #e5e7eb", borderRadius: 10, padding: "10px 12px", color: "#111827", background: "#fff" }}>All Grades ▾</div>
+        </div>
+
+        <div style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 16 }}>
+          <div style={{ fontWeight: 800, marginBottom: 8 }}>Officers ({officers.length})</div>
+
+          <div style={{ display: "grid", gap: 12 }}>
+            {officers.map((o, idx) => (
+              <Reveal key={(o.id||idx) + o.name} delay={idx * 70}>
+                <div style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 14, boxShadow: "0 8px 22px rgba(2,6,23,0.05)" }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 12, minWidth: 0 }}>
+                      <div style={{ width: 36, height: 36, borderRadius: 999, background: "#ef4444", color: "white", display: "grid", placeItems: "center", fontWeight: 800 }}>
+                        {initials(o.name)}
+                      </div>
+                      <div style={{ minWidth: 0 }}>
+                        <div style={{ fontWeight: 800, marginBottom: 2, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{o.name}</div>
+                        <div style={{ color: "#475569" }}>{o.role}{gradeOf(o.name) ? ` • Grade ${gradeOf(o.name)}` : ""}</div>
+                        {o.email && <a href={`mailto:${o.email}`} style={{ color: "#2563eb", fontWeight: 600 }}>{o.email}</a>}
+                      </div>
+                    </div>
+                    {o.email && (
+                      <button onClick={() => copy(o.email)} aria-label={`Copy ${o.name}'s email`} title="Copy email"
+                        style={{ border: "1px solid #e5e7eb", background: "#fff", padding: "8px 10px", borderRadius: 8, cursor: "pointer" }}>
+                        Copy
+                      </button>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </div>
