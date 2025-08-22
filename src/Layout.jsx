@@ -2,13 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home as HomeIcon, UserPlus, Users, Calendar } from "lucide-react";
 
-import logoPadded from "./assets/logo_new.png";
+import logoPadded from "./assets/ethics_logo.webp";
 
 const nav = [
   { title: "Home", url: "/", icon: HomeIcon },
   { title: "Join DECA", url: "/join", icon: UserPlus },
   { title: "Officers", url: "/officers", icon: Users },
-  { title: "Events", url: "/events", icon: Calendar },
+  { title: "FAQ", url: "/faq", icon: Calendar },
 ];
 
 export default function Layout({ children }) {
@@ -48,7 +48,7 @@ export default function Layout({ children }) {
       style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
     >
       {/* Top nav */}
-      <nav
+      <nav className="navbar-glass"
         style={{
           position: "fixed",
           top: 24,
@@ -97,7 +97,7 @@ export default function Layout({ children }) {
                 />
               </div>
               <span style={{ fontWeight: 800, fontSize: 18, letterSpacing: "-0.02em" }}>
-                Memorial DECA
+                Ethics Bowl
               </span>
             </Link>
 
@@ -248,7 +248,7 @@ export default function Layout({ children }) {
               className="brand-logo"
               style={{ height: 24, width: "auto" }}
             />
-            <span style={{ fontWeight: 800 }}>Memorial DECA</span>
+            <span style={{ fontWeight: 800 }}>Ethics Bowl</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
             <a href="mailto:decamemorialclub@gmail.com" style={{ color: "#64748b", fontSize: 14 }}>

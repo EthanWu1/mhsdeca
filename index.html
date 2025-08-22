@@ -3,11 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DECA - Memorial</title>
-    <link rel="icon" type="image/x-icon" type="image/png" href="/favicon.png" />
+    <title>Ethics Bowl</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-  </body>
+  
+<!-- Scroll reveal script -->
+<script>
+(function(){
+  if (typeof window === "undefined") return;
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if (e.isIntersecting){ e.target.classList.add("revealed"); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.addEventListener("DOMContentLoaded", function(){
+    document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+  });
+})();
+</script>
+
+</body>
 </html>

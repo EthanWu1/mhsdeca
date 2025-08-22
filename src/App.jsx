@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import FAQ from "./pages/FAQ.jsx";
 import Layout from "./Layout.jsx";
 import Home from "./pages/Home.jsx";
 import Join from "./pages/Join.jsx";
@@ -13,7 +14,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/join" element={<Join />} />
         <Route path="/officers" element={<Officers />} />
-        <Route path="/events" element={<Events />} />
+        <Route path="/events" element={<FAQ />} />
       </Routes>
     </Layout>
   );

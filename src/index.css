@@ -210,3 +210,48 @@ img { display: block; max-width: 100%; height: auto; }
   box-shadow: 0 16px 34px rgba(2,6,23,0.08);
   border-color: #ef4444;
 }
+
+
+/* === Ethics Bowl theme (red/black) & scroll reveals === */
+:root{ --eb-red:#ef4444; --eb-red-d:#dc2626; --eb-black:#0b0b0d; --eb-ink:#0f172a }
+body{ background:#0b0b0d; color:#e5e7eb }
+a{ color:#fca5a5 }
+.card{ background:#111217; border:1px solid #1f2430; border-radius:14px }
+
+/* Navbar always accessible */
+.navbar-glass{
+  position:fixed; top:24px; left:50%; transform:translateX(-50%);
+  width:min(1120px,100%); padding:12px 16px; z-index:60;
+  background:rgba(17,18,23,.72); backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.08); border-radius:9999px;
+}
+
+/* Mobile dropdown */
+.nav-links{ display:flex; gap:16px; align-items:center }
+.nav-mobile-btn{ display:none }
+@media (max-width: 768px){
+  .nav-links{ display:none }
+  .nav-mobile-btn{ display:inline-flex }
+}
+.mobile-menu-panel{
+  position:fixed; top:92px; left:0; right:0; z-index:59;
+  max-height:calc(100vh - 110px); overflow-y:auto;
+}
+
+/* Logos */
+.brand-logo, .footer-logo{ height:28px; width:auto; object-fit:contain }
+@media (max-width:640px){ .brand-logo{ height:24px } }
+.hero-logo{ height:clamp(90px,20vw,160px); width:auto; object-fit:contain }
+.logo-hover-spin:hover{ animation: spinEase 3.2s cubic-bezier(.3,.7,.2,1) 1 }
+@keyframes spinEase{ 0%{transform:rotate(0)} 30%{transform:rotate(360deg)} 70%{transform:rotate(360deg)} 100%{transform:rotate(360deg)} }
+
+/* Reveal on scroll */
+.reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease }
+.reveal.revealed{ opacity:1; transform:none }
+
+/* Buttons */
+.btn{ background:var(--eb-red); color:white; border:none; padding:10px 14px; border-radius:10px; font-weight:700 }
+.btn:hover{ background:var(--eb-red-d) }
+
+/* Footer socials same size */
+.footer-social img{ width:22px; height:22px; border-radius:6px; display:block }
