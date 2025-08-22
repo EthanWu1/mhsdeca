@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { Home as HomeIcon, UserPlus, Users, Calendar } from "lucide-react";
 import logoPadded from "./assets/ethics_logo.webp";
 
-import logoPadded from "./assets/logo_new.png";
 
 const nav = [
   { title: "Home", url: "/", icon: HomeIcon },
