@@ -1,28 +1,54 @@
-import ethicsLogo from "../assets/ethics_logo.webp";
-import logoPadded from "../../assets/logo_new.png";
 import React from "react";
-import { Link } from "react-router-dom";
+import ethicsLogo from "../../assets/ethics_logo.webp"; // adjust path if your assets differ
 
 export default function HeroSection() {
   return (
-    <section style={backgroundImage:`url("https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1600&auto=format&fit=crop")`,backgroundSize:"cover",backgroundPosition:"center",boxShadow:"inset 0 0 0 2000px rgba(0,0,0,.35)"} style={{ position: "relative",  minHeight: "80vh", display: "grid", placeItems: "center", padding: "0 24px" }}>
-      <div style={{ maxWidth: 960, textAlign: "center" }}>
+    <section
+      style={{
+        backgroundImage:
+          'url("https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1600&auto=format&fit=crop")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        boxShadow: "inset 0 0 0 2000px rgba(0,0,0,.35)",
+        position: "relative",
+        minHeight: "80vh",
+        display: "grid",
+        placeItems: "center",
+        padding: "0 24px",
+      }}
+    >
+      <div style={{ maxWidth: 960, textAlign: "center" }} className="reveal">
         <div style={{ display: "flex", justifyContent: "center", marginBottom: 16 }}>
-          <img className="hero-logo logo-hover-spin" src={typeof ethicsLogo!=="undefined"?ethicsLogo:undefined} alt="Ethics Bowl Logo" />
+          <img
+            src={ethicsLogo}
+            alt="Ethics Bowl Logo"
+            className="hero-logo logo-hover-spin"
+            style={{ height: "clamp(90px, 20vw, 160px)", width: "auto", objectFit: "contain" }}
+          />
         </div>
-        <h1 style={{ fontSize: "clamp(28px, 6vw, 56px)", fontWeight: 800, margin: 0, lineHeight: 1.1 }}>Memorial High School <span style={{ color: "#ef4444" }}>DECA</span></h1>
-        <p style={{maxWidth:640,lineHeight:1.6}}>Welcome to <strong>Ethics Bowl</strong> — where critical thinking meets collaboration. Each meeting explores philosophical and ethical dilemmas and ends with a fun quiz bowl with prizes.</p>
-        <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
-          <Link to="/join" style={{ padding: "12px 16px", borderRadius: 12, background: "#ef4444", color: "white", fontWeight: 700 }}>Join Now</Link>
-          <Link to="/events" style={{ padding: "12px 16px", borderRadius: 12, background: "white", border: "1px solid #e5e7eb", color: "#111827", fontWeight: 700 }}>See Events</Link>
+
+        <h1
+          style={{
+            margin: 0,
+            fontWeight: 900,
+            fontSize: "clamp(26px, 6vw, 40px)",
+            letterSpacing: "-0.02em",
+            color: "#f3f4f6",
+          }}
+        >
+          Ethics Bowl
+        </h1>
+
+        <p style={{ maxWidth: 680, margin: "10px auto 0", color: "#e5e7eb", lineHeight: 1.6 }}>
+          Where critical thinking meets collaboration. We explore philosophical and real-world
+          ethical dilemmas—then close each meeting with a fun quiz bowl and prizes.
+        </p>
+
+        <div style={{ marginTop: 20 }}>
+          <a href="/join" className="btn" style={{ textDecoration: "none" }}>
+            Join Now
+          </a>
         </div>
-      </div>
-    
-      {/* Scroll-down arrow */}
-      <div style={{ position: "absolute", bottom: "20px", left: "50%", transform: "translateX(-50%)" }}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#6b7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="bounce-arrow">
-          <polyline points="6 9 12 15 18 9" />
-        </svg>
       </div>
     </section>
   );
