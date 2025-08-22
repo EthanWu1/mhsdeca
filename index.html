@@ -13,17 +13,15 @@
 <!-- Scroll reveal script -->
 <script>
 (function(){
-  if (typeof window === "undefined") return;
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if (e.isIntersecting){ e.target.classList.add("revealed"); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.12 });
-  document.addEventListener("DOMContentLoaded", function(){
+  const run = () => {
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("revealed"); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
     document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
-  });
+  };
+  if (document.readyState !== "loading") run();
+  else document.addEventListener("DOMContentLoaded", run);
 })();
 </script>
-
 </body>
 </html>

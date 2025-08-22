@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home as HomeIcon, UserPlus, Users, Calendar } from "lucide-react";
-
 import logoPadded from "./assets/ethics_logo.webp";
+
+import logoPadded from "./assets/logo_new.png";
 
 const nav = [
   { title: "Home", url: "/", icon: HomeIcon },
-  { title: "Join DECA", url: "/join", icon: UserPlus },
+  { title: "Join Ethics Bowl", url: "/join", icon: UserPlus },
   { title: "Officers", url: "/officers", icon: Users },
   { title: "FAQ", url: "/faq", icon: Calendar },
 ];
@@ -48,17 +49,7 @@ export default function Layout({ children }) {
       style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
     >
       {/* Top nav */}
-      <nav className="navbar-glass"
-        style={{
-          position: "fixed",
-          top: 24,
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 50,
-          width: "100%",
-          maxWidth: 1120,
-        }}
-      >
+      <nav className="navbar-glass">
         <div
           style={{
             margin: "0 16px",
@@ -91,7 +82,7 @@ export default function Layout({ children }) {
               >
                 <img
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3e398a9e8_download.png"
-                  alt="DECA Logo"
+                  alt="Ethics Bowl Logo"
                   className="brand-logo"
                   style={{ height: 28, width: "auto" }}
                 />
@@ -244,7 +235,7 @@ export default function Layout({ children }) {
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <img
               src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3e398a9e8_download.png"
-              alt="DECA Logo"
+              alt="Ethics Bowl Logo"
               className="brand-logo"
               style={{ height: 24, width: "auto" }}
             />

@@ -71,7 +71,7 @@ export default function Officers() {
           </div>
           <div>
             <h1 style={{ fontSize: 40, fontWeight: 800, margin: 0 }}>Officers</h1>
-            <div style={{ color: "#64748b" }}>Manage and view DECA chapter officers</div>
+            <div style={{ color: "#64748b" }}>Manage and view Ethics Bowl chapter officers</div>
           </div>
         </div>
 

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home as HomeIcon, UserPlus, Users, Calendar } from "lucide-react";
 import logoPadded from "./assets/ethics_logo.webp";
+import logoPadded from "./assets/logo_padded.webp";
 import instaImg from "./assets/instagram.webp";
 import remindImg from "./assets/remind.webp";
 import instaImg from "./assets/instagram.webp";
@@ -10,7 +11,7 @@ import remindImg from "./assets/remind.png";
 
 const nav = [
   { title: "Home", url: "/", icon: HomeIcon },
-  { title: "Join DECA", url: "/join", icon: UserPlus },
+  { title: "Join Ethics Bowl", url: "/join", icon: UserPlus },
   { title: "Officers", url: "/officers", icon: Users },
   { title: "FAQ", url: "/faq", icon: Calendar },
 ];
@@ -25,17 +26,7 @@ export default function Layout({ children }) {
       style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
     >
       {/* Top nav */}
-      <nav className="navbar-glass"
-        style={{
-          position: "fixed",
-          top: 24,
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 50,
-          width: "100%",
-          maxWidth: 1120,
-        }}
-      >
+      <nav className="navbar-glass">
         <div
           style={{
             margin: "0 16px",
@@ -65,7 +56,7 @@ export default function Layout({ children }) {
                   justifyContent: "center",
                 }}
               >
-                <img src={logoPadded} alt="DECA Logo" className="footer-logo" style={{ height: 24, width: "auto", objectFit: "contain" }} />
+                <img src={logoPadded} alt="Ethics Bowl Logo" className="footer-logo" style={{ height: 24, width: "auto", objectFit: "contain" }} />
               </div>
               <span style={{ fontWeight: 800, fontSize: 18, letterSpacing: "-0.02em" }}>
                 Ethics Bowl
@@ -216,7 +207,7 @@ export default function Layout({ children }) {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <img src={logoPadded} alt="DECA Logo" className="brand-logo" style={{ height: 28, width: "auto", objectFit: "contain" }} />
+            <img src={logoPadded} alt="Ethics Bowl Logo" className="brand-logo" style={{ height: 28, width: "auto", objectFit: "contain" }} />
             <span style={{ fontWeight: 800 }}>Ethics Bowl</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>

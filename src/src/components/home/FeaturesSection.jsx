@@ -14,7 +14,7 @@ export default function FeaturesSection() {
   return (
     <section style={{ padding: "80px 24px", background: "white" }}>
       <div style={{ maxWidth: 1120, margin: "0 auto" }}>
-        <h2 style={{ fontSize: 40, fontWeight: 800, textAlign: "center", marginBottom: 24 }}>Why Join <span style={{ color: "#ef4444" }}>DECA</span>?</h2>
+        <h2 style={{ fontSize: 40, fontWeight: 800, textAlign: "center", marginBottom: 24 }}>Why Join <span style={{ color: "#ef4444" }}>Ethics Bowl</span>?</h2>
         <p style={{ textAlign: "center", color: "#475569", maxWidth: 720, margin: "0 auto 40px" }}>Opportunities inside and outside the classroom to grow as a leader.</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 16 }} className="reveal-seq features-grid">
           {items.map((it, idx) => (

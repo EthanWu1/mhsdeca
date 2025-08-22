@@ -14,7 +14,7 @@ export default function Join() {
 <div style={{ marginTop: 16, padding: 16, border: "1px solid #e5e7eb", borderRadius: 12, background: "#fff8f8" }}>
   <strong>Eligibility:</strong> Students must be currently enrolled in, or have previously enrolled in, a <em>CTE‑approved</em> course.
   <div style={{ marginTop: 8 }}>
-    You can confirm this by checking the school’s course catalog. If you’re unsure, ask a counselor or DECA advisor.
+    You can confirm this by checking the school’s course catalog. If you’re unsure, ask a counselor or Ethics Bowl advisor.
   </div>
 </div>
 

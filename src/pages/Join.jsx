@@ -9,7 +9,7 @@ export default function Join() {
       <div style={{ maxWidth: 820, textAlign: "center" }}>
         <h1 style={{ fontSize: "clamp(36px, 6vw, 56px)", fontWeight: 900, margin: 0 }}>Join Our Chapter</h1>
         <p style={{ color: "#64748b", fontSize: 18, maxWidth: 720, margin: "12px auto 22px", lineHeight: 1.6 }}>
-          Ready to become a part of Memorial DECA? Click the button below to fill out our official membership application on Google Forms.
+          Ready to become a part of Ethics Bowl? Click the button below to fill out our official membership application on Google Forms.
         </p>
 
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -59,7 +59,7 @@ export default function Join() {
               <div style={{ textAlign: "left" }}>
                 <div style={{ fontWeight: 800, marginBottom: 4 }}>CTE Eligibility</div>
                 <div style={{ color: "#64748b" }}>
-                  Students must be currently enrolled in, or have previously completed, a <em>CTE‑approved</em> course to be eligible for DECA membership.
+                  Students must be currently enrolled in, or have previously completed, a <em>CTE‑approved</em> course to be eligible for Ethics Bowl membership.
                 </div>
               </div>
             </div>

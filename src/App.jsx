@@ -5,6 +5,7 @@ import Layout from "./Layout.jsx";
 import Home from "./pages/Home.jsx";
 import Join from "./pages/Join.jsx";
 import Officers from "./pages/Officers.jsx";
+import Events from "./pages/Events.jsx";
 
 export default function App() {
   return (
@@ -13,7 +14,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/join" element={<Join />} />
         <Route path="/officers" element={<Officers />} />
-        <Route path="/events" element={<FAQ />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
     </Layout>
   );
